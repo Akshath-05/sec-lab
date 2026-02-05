@@ -1,0 +1,51 @@
+import React, { useState } from 'react'
+
+ function tabcomponent() {
+  const [activeTab,setactiveTab]=useState("Home")
+  return (
+    <div style={styles.Container}>
+      <h2>Tab Component</h2>
+      <div style={styles.tabContainer}>
+        <button onClick={()=>setactiveTab("Home")}>Home</button>
+        <button onClick={()=>setactiveTab("About")}>About</button>
+        <button onClick={()=>setactiveTab("Contact")}>Contact</button>
+      </div>
+      <div style={styles.contentBox}>
+        {activeTab ==="Home"&&(
+          <p>This is Home Page</p>
+        )}
+        {activeTab ==="About"&&(
+        <p>hai about page i'm reactjs</p>
+        )}
+         {activeTab ==="Contact"&&(
+         <p>ContactUs:xxxxxxx</p>
+        )}
+    
+      </div>
+    </div>
+  )
+}
+const styles={
+  container:{
+    minHeight:"100vh",
+    background:"lightgrey",
+    textAlign:"center"
+  },
+  tabContainer:{
+    padding:"20px"
+  },
+  activeBtn:{
+    background:"green"
+  },
+  Btn:{
+    background:"white"
+  },
+  contentBox:{
+    height:"100px",
+    width:"200px",
+    border:"1px solid",
+    borderRadius:"10px",
+    marginLeft:"600px"
+  }
+}
+export default tabcomponent
